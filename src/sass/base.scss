@@ -1,0 +1,138 @@
+@use './var.scss' as *;
+@mixin centrarItems(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    background-color: $colorPrincipal;
+    font-size: $letraP;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.div_NavBar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    color: $colorTitulos;
+    font-size: $letraT - 0.4;
+    background-color: $colorTerciario;
+    padding: 25px 0; 
+    a{
+        text-decoration: none;
+        color: $colorTitulos;
+        width: fit-content;
+        height: fit-content;
+        padding: 10px; 
+    }
+    a:hover{
+        background-color: $colorPrincipal;
+        border-radius: 10%;
+    }
+    input{
+        width: 40%;
+        padding: 10px;
+        @include centrarItems();
+    }
+}
+
+.div_inicio{
+    font-size: $letraT + 0.4;
+    margin: 50px;
+}
+
+#div_characters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 50px 100px;
+}
+
+.card {
+    width: 250px;
+    height: 350px;
+    margin: 50px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 10 10px 40px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-front {
+    background: linear-gradient(135deg, #ff6f00, #ffd600);
+    color: #fff;
+}
+
+.card-front img {
+    object-position: top;
+    width: 60%;
+    height: 80%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.card-back {
+    background: linear-gradient(135deg, #1976d2, #d32f2f);
+    color: #fff;
+    font-size: $letraP - 0.6;
+    padding: 20px;
+    transform: rotateY(180deg);
+    text-align: center;
+}
+
+#footer{
+    background-color: $colorTerciario;
+    width: 100%;
+    height: fit-content;
+    @include centrarItems();
+    a{
+        margin: 0 25px;
+    }
+    img{
+        width: 25px;
+        height: 25px;
+    }
+    img:hover{
+        scale: 1.2;
+    }
+}
