@@ -82,6 +82,8 @@ const Characters = ({ characterFilter, characters, setCharacters}: CharacterProp
                             <div className="card-back">
                                 <p className="p_name">{item.name}</p>
                                 <p className="description_card">{item.description}</p>
+                                <p>{`Gender: ${item.gender}`}</p>
+                                <p>{`Race: ${item.race}`}</p>
                             </div>
                         </div>
                     </div>
